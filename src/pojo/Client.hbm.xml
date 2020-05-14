@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 13, 2020 7:01:44 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Client" table="client" catalog="job" optimistic-lock="version">
+        <id name="regNo" type="string">
+            <column name="regNo" length="5" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="clientcategory" class="pojo.Clientcategory" fetch="select">
+            <column name="categoryName" length="38" />
+        </many-to-one>
+        <property name="firstName" type="string">
+            <column name="firstName" length="20" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="lastName" length="20" />
+        </property>
+        <property name="phoneNumber" type="string">
+            <column name="phoneNumber" length="10" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="50" />
+        </property>
+        <property name="photo" type="string">
+            <column name="photo" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

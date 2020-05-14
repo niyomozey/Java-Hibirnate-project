@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 13, 2020 7:01:44 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Login" table="login" catalog="job" optimistic-lock="version">
+        <id name="username" type="string">
+            <column name="username" length="38" />
+            <generator class="assigned" />
+        </id>
+        <property name="password" type="string">
+            <column name="password" length="38" />
+        </property>
+        <property name="firstName" type="string">
+            <column name="first_name" length="30" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="last_name" length="30" />
+        </property>
+        <property name="dob" type="date">
+            <column name="dob" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>
